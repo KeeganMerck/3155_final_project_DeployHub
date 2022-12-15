@@ -7,7 +7,7 @@
             {% if Person.profile_image %}
             <img src="/static/profile_images/{{Person.profile_image}}" alt="Profile-img">
             {% else %}
-            <img src="/static/profile_images/ryan-reynolds.jpeg" alt="Profile-img">
+            <img src="/static/profile_images/default.png" alt="Profile-img">
             {% endif %}
             <p>{{Person.first_name}} {{Person.last_name}}</p>
             <p><small>{{Person.bio}}</small></p>
@@ -30,7 +30,7 @@
                             <p>{{Listing.category}}</p>
                             <p>{{Listing.title}}</p>
                             <p>{{"${:0,.2f}".format(Listing.price)}}</p>
-                             <p>{{Listing.date_posted.strftime("%b %d %Y")}}</p>
+                            <p>{{Listing.date_posted.strftime("%b %d %Y")}}</p>
                             <a href="/listing_page/{{Listing.listing_id}}">More Info</a>
                             {% if isOwner %}
                             <a href="/update_listing/{{Listing.listing_id}}">Update</a>
